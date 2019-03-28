@@ -36,6 +36,10 @@ modules-left = i3
 modules-center = xwindow
 modules-right = music cpu memory network battery volume date powermenu
 
+tray-position = right
+tray-detached = false
+tray-padding = 0
+
 [bar/center]
 inherit = bar/default
 monitor = DVI-I-1

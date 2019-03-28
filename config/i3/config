@@ -13,7 +13,9 @@
 exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
 exec --no-startup-id xcompmgr
 exec --no-startup-id xrdb ~/.Xresources
+exec_always --no-startup-id "killall polybar;polybar default"
 exec --no-startup-id redshift -l 46.45:6.85 -t 6500:3000
+exec --no-startup-id owncloud
 
 set $mod Mod4
 set $alt Mod1
@@ -194,10 +196,9 @@ bindsym $mod+r mode "resize"
 #	modifier None
 #}
 
-exec_always --no-startup-id "killall polybar;polybar default"
 
 # I3 Gaps
-gaps outer 15
+gaps outer 5
 gaps inner 15
 for_window [class="^.*"] border pixel 2
 
@@ -207,7 +208,7 @@ bindsym $mod+Shift+b			gaps inner current minus 5
 bindsym $mod+n				gaps outer current plus 5
 bindsym $mod+Shift+n			gaps outer current minus 5
 
-bindsym $mod+$alt+n			gaps outer current set 15; gaps inner current set 15
+bindsym $mod+$alt+n			gaps outer current set 5; gaps inner current set 15
 
 bindsym $mod+Shift+m			exec --no-startup-id st -e cmatrix -ab
 bindsym $mod+$alt+l			exec --no-startup-id i3lock -e -i ~/.config/wall.png
