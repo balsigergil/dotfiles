@@ -7,16 +7,16 @@ icon=""
 pgrep -x redshift &> /dev/null
 if [[ $? -eq 0 ]]; then
 	temp=$(redshift -p 2>/dev/null | grep Temp | cut -d':' -f2)
-	temp=${temp//K/}
+	temp_="${temp//K/}"
 fi
 
 # OPTIONAL: Append ' ${temp}K' after $icon
-if [[ -z $temp ]]; then
-	echo "%{F#65737E}$icon $temp K"       # Greyed out (not running)
-elif [[ $temp -ge 5000 ]]; then
-	echo "%{F#8FA1B3}$icon $temp K"       # Blue
-elif [[ $temp -ge 4000 ]]; then
-	echo "%{F#EBCB8B}$icon $temp K"       # Yellow
+if [[ -z $temp_ ]]; then
+	echo ""			            # Greyed out (not running)
+elif [[ $temp_ -ge 5000 ]]; then
+	echo "%{F#8FA1B3}$icon $temp"       # Blue
+elif [[ $temp_ -ge 4000 ]]; then
+	echo "%{F#EBCB8B}$icon $temp"       # Yellow
 else
-	echo "%{F#D08770}$icon $temp K"       # Orange
+	echo "%{F#D08770}$icon $temp"       # Orange
 fi

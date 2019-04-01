@@ -14,7 +14,7 @@ exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
 exec --no-startup-id xcompmgr
 exec --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id "killall polybar;polybar default"
-exec --no-startup-id redshift -l 46.45:6.85 -t 6500:2000
+exec_always --no-startup-id "killall redshift;redshift"
 exec --no-startup-id owncloud
 
 set $mod Mod4
