@@ -14,7 +14,7 @@ exec --no-startup-id xwallpaper --zoom ~/.config/wall.png
 exec --no-startup-id xcompmgr
 exec --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id "killall polybar;polybar default"
-exec --no-startup-id redshift -l 46.45:6.85 -t 6500:3000
+exec --no-startup-id redshift -l 46.45:6.85 -t 6500:2000
 exec --no-startup-id owncloud
 
 set $mod Mod4
@@ -200,6 +200,8 @@ bindsym $mod+r mode "resize"
 # I3 Gaps
 gaps outer 5
 gaps inner 15
+smart_gaps on
+smart_borders on
 for_window [class="^.*"] border pixel 2
 
 bindsym $mod+b				gaps inner current plus 5
