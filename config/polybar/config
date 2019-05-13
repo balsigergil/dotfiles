@@ -133,7 +133,7 @@ label-foreground = ${colors.ram}
 
 [module/date]
 type = internal/date
-date = %{F#88C0D0}   %{F#D8DEE9}%d %B %Y,  %H:%M
+date = %{F#88C0D0}   %{F#D8DEE9}%d.%m.%Y  %H:%M
 
 [module/volume]
 type = internal/volume

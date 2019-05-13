@@ -14,7 +14,7 @@ fi
 if [[ -z $temp_ ]]; then
 	echo ""			            # Greyed out (not running)
 elif [[ $temp_ -ge 5000 ]]; then
-	echo "%{F#8FA1B3}$icon $temp"       # Blue
+	echo "" 		            # Blue
 elif [[ $temp_ -ge 4000 ]]; then
 	echo "%{F#EBCB8B}$icon $temp"       # Yellow
 else
