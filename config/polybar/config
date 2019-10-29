@@ -25,7 +25,6 @@ urgent = ${xrdb:color9}
 underline = ${xrdb:color11}
 
 [bar/default]
-monitors = DP-4 DVI-I-1
 width = 100%
 height = 32
 offset-y = 0
@@ -50,7 +49,7 @@ font-4 = "Font Awesome 5 Brands Regular:size=12;3"
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xbacklight pulseaudio memory cpu wlan eth battery date powermenu
+modules-right = backlight-acpi pulseaudio memory cpu wlan eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -104,6 +103,8 @@ label-urgent-foreground = ${colors.urgent}
 [module/xbacklight]
 type = internal/xbacklight
 
+card = intel_backlight
+
 format = <label> <bar>
 label = BL
 
@@ -123,6 +124,16 @@ inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
+format = <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -138,24 +149,16 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp59s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected =  <label-connected>
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+format-disconnected =  <label-disconnected>
+format-disconnected-foreground = ${colors.urgent}
+format-disconnected-underline = ${colors.urgent}
+label-disconnected = %ifname%
 
 [module/eth]
 type = internal/network
@@ -214,48 +217,35 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
 animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${xrdb:color11}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground}
 
 [module/powermenu]
 type = custom/menu
