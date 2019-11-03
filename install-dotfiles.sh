@@ -12,7 +12,7 @@ sudo pacman -S --needed \
 	redshift \
 	neofetch \
 	playerctl \
-	ttf-font-awesome ttf-dejavu ttf-bitstream-vera ttf-inconsolata \
+	ttf-hack ttf-font-awesome ttf-dejavu ttf-bitstream-vera ttf-inconsolata \
 	pulseaudio pulseaudio-alsa pulseaudio-bluetooth
 
 # Installation de polybar
