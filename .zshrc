@@ -80,8 +80,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 
-alias vim="nvim"
 alias ls="lsd"
+alias lt="ls --tree"
 alias cat="bat"
 alias python="python3"
 alias os="openstack"

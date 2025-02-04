@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-right_format = '$time'
+format = "$all$fill$time$line_break$jobs$status$character"
 
 palette = "rose-pine"
 
@@ -18,9 +18,12 @@ iris = '#c4a7e7'
 [package]
 disabled = true
 
+[fill]
+symbol = ' '
+
 [time]
 disabled = false
-format = '[$time 󰧱]($style)'
+format = '[$time 󰧱 ]($style)'
 
 [directory]
 truncation_length = 6

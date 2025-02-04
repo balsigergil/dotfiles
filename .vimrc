@@ -1,6 +1,12 @@
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
+" Define the default encoding
+set encoding=utf-8
+
+" Enable the mouse mode
+set mouse=a
+
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 
@@ -17,14 +23,18 @@ syntax on
 set number
 set relativenumber
 
-" Set shift width to 4 spaces.
-set shiftwidth=4
+" Set shift width to 2 spaces.
+set shiftwidth=2
 
-" Set tab width to 4 columns.
-set tabstop=4
+" Set tab width to 2 columns.
+set tabstop=2
+set softtabstop=2
 
 " Use space characters instead of tabs.
 set expandtab
+
+" Auto indent new lines
+set autoindent
 
 " Do not save backup files.
 set nobackup
@@ -55,7 +65,11 @@ set showmatch
 set hlsearch
 
 " Set the commands to save in history default number is 20.
-set history=1000
+set history=10000
+
+" Split the window the right and below the current window
+set splitbelow
+set splitright
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
