@@ -88,7 +88,6 @@ alias os="openstack"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
