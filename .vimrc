@@ -71,23 +71,13 @@ set history=10000
 set splitbelow
 set splitright
 
-" Enable auto completion menu after pressing TAB.
-set wildmenu
-
-" Make wildmenu behave like similar to Bash completion.
-set wildmode=list:longest
-
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
 let mapleader=" "
 
-" Press double space to jump back to the last cursor position.
-nnoremap <leader><Space> ``
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprev<CR>
 
-" Type jj to exit insert mode quickly.
-inoremap jj <Esc>
+" Type jk to exit insert mode quickly.
+inoremap jk <Esc>
 
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
@@ -110,7 +100,7 @@ noremap <C-right> <C-w><
 nnoremap <leader>w :w<CR>
 
 " Clear hlsearch after Espace in normal
-nnoremap <Esc> :noh<CR>
+nnoremap <Esc> :noh<CR><Esc>
 
 " Clear status line when vimrc is reloaded.
 set statusline=

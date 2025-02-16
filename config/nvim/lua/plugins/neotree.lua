@@ -35,8 +35,15 @@ return {
 
 		require("neo-tree").setup({
 			-- Default config: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
-			close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+			close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 			popup_border_style = "rounded",
+			window = {
+				mappings = {
+					["<Space>"] = "none",
+					["l"] = "open",
+					["h"] = "close_node",
+				},
+			},
 			filesystem = {
 				filtered_items = {
 					visible = false, -- when true, they will just be displayed differently than normal items
@@ -49,6 +56,8 @@ return {
 						".git",
 						".venv",
 						"target",
+						"__pycache__",
+						".ruff_cache",
 					},
 					hide_by_pattern = { -- uses glob style patterns
 						--"*.meta",
@@ -68,7 +77,7 @@ return {
 						--".null-ls_*",
 					},
 				},
-				hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
+				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens neo-tree
 				-- in whatever position is specified in window.position
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
 				-- window like netrw would, regardless of window.position

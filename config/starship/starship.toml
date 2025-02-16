@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$all$fill$time$line_break$jobs$status$character"
+# format = "$all$fill$time$line_break$jobs$status$character"
 
 palette = "rose-pine"
 
@@ -22,7 +22,7 @@ disabled = true
 symbol = ' '
 
 [time]
-disabled = false
+disabled = true
 format = '[$time 󰧱 ]($style)'
 
 [directory]

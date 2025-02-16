@@ -1,10 +1,3 @@
-local mode = {
-	"mode",
-	fmt = function(str)
-		return " " .. str
-	end,
-}
-
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 100
 end
@@ -35,11 +28,11 @@ return {
 			icons_enabled = true,
 			section_separators = { left = "", right = "" },
 			component_separators = { left = "", right = "" },
-			disabled_filetypes = { "alpha", "neo-tree", "qf", "NvimTree" },
+			disabled_filetypes = { "alpha", "neo-tree", "qf", "NvimTree", "trouble" },
 			always_divide_middle = true,
 		},
 		sections = {
-			lualine_a = { mode },
+			lualine_a = { "mode" },
 			lualine_b = { "branch" },
 			lualine_c = { "filename" },
 			lualine_x = {
