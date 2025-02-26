@@ -11,12 +11,17 @@ return {
 		{
 			"<leader>xw",
 			"<cmd>Trouble diagnostics toggle<cr>",
-			desc = "Diagnostics (Trouble)",
+			desc = "Workspace Diagnostics (Trouble)",
+		},
+		{
+			"<leader>xt",
+			"<cmd>Trouble todo toggle<cr>",
+			desc = "ToDo List (Trouble)",
 		},
 		{
 			"<leader>xs",
-			"<cmd>Trouble symbols toggle focus=false<cr>",
-			desc = "Symbols (Trouble)",
+			"<cmd>Trouble lsp_document_symbols toggle focus=false win.position=right<cr>",
+			desc = "LSP Document Symbols (Trouble)",
 		},
 		{
 			"<leader>xl",
@@ -27,11 +32,6 @@ return {
 			"<leader>xq",
 			"<cmd>Trouble qflist toggle<cr>",
 			desc = "Quickfix List (Trouble)",
-		},
-		{
-			"<leader>xt",
-			"<cmd>Trouble todo toggle<cr>",
-			desc = "ToDo List (Trouble)",
 		},
 		{
 			"<leader>xp",

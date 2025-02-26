@@ -51,9 +51,27 @@ return {
 
 				map("gh", vim.lsp.buf.signature_help, "Signature [H]elp")
 
-				-- Fuzzy find all the symbols in your current workspace.
-				--  Similar to document symbols, except searches over your entire project.
-				map("<leader>ss", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+				map("<leader>ss", function()
+					require("telescope.builtin").lsp_document_symbols({
+						symbols = { "Interface", "Class", "Function", "Method", "Constant", "Trait", "Struct" },
+					})
+				end, "File structure")
+				map("<leader>sp", function()
+					require("telescope.builtin").lsp_dynamic_workspace_symbols({
+						symbols = {
+							"Class",
+							"Enum",
+							"Function",
+							"Interface",
+							"Method",
+							"Module",
+							"Namespace",
+							"Package",
+							"Struct",
+							"Trait",
+						},
+					})
+				end, "Project symbols")
 
 				-- Execute a code action, usually your cursor needs to be on top of an error
 				-- or a suggestion from your LSP for this to activate.
@@ -107,7 +125,13 @@ return {
 		vim.api.nvim_create_autocmd("LspProgress", {
 			callback = function(ev)
 				local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-				vim.notify(vim.lsp.status(), "info", {
+				local status = vim.lsp.status()
+
+				if status == "" then
+					return
+				end
+
+				vim.notify(status, vim.log.levels.INFO, {
 					id = "lsp_progress",
 					title = "LSP Progress",
 					opts = function(notif)

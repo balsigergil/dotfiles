@@ -76,13 +76,10 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
+vim.keymap.set("n", "J", "gJ", { desc = "Join lines" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without yanking" })
-vim.keymap.set("n", "<leader>d", '"_d', { desc = "Delete without yanking" })
-vim.keymap.set("v", "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to clipboard" })
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Paste to clipboard" })
@@ -90,3 +87,7 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy to clipboard (whole line)
 
 vim.keymap.set("n", "<leader>cc", "gcc", { desc = "Toggle line comment", remap = true })
 vim.keymap.set("v", "<leader>cc", "gc", { desc = "Toggle comment", remap = true })
+vim.keymap.set("n", "<C-§>", "gcc", { desc = "Toggle line comment", remap = true })
+vim.keymap.set("v", "<C-§>", "mzgcgv", { desc = "Toggle comment", remap = true })
+
+vim.keymap.set("n", "<leader>tf", "<cmd>FormatToggle<cr>", { desc = "Toggle autoformat-on-save" })

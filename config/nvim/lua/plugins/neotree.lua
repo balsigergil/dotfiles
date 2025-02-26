@@ -35,7 +35,6 @@ return {
 
 		require("neo-tree").setup({
 			-- Default config: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/main/lua/neo-tree/defaults.lua
-			close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 			popup_border_style = "rounded",
 			window = {
 				mappings = {

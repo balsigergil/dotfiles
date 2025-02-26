@@ -83,8 +83,7 @@ export EDITOR=vim
 alias ls="lsd"
 alias lt="ls --tree"
 alias cat="bat"
-alias python="python3"
-alias os="openstack"
+alias vim="nvim"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"

@@ -5,7 +5,6 @@
   "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
-  "editor.lineHeight": 1.6,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
@@ -33,6 +32,29 @@
     "scminput": false
   },
   "go.toolsManagement.autoUpdate": true,
+  "vim.leader": " ",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    }
+  ],
   "[latex]": {
     "editor.wordWrap": "on"
   },
@@ -51,5 +73,11 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
+  },
+  "[typst]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  },
+  "[typst-code]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
   }
 }

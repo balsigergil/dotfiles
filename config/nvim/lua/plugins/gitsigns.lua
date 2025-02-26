@@ -13,19 +13,10 @@ return {
 
 			-- Navigation
 			map("n", "<leader>hn", function()
-				if vim.wo.diff then
-					vim.cmd.normal({ "]c", bang = true })
-				else
-					gitsigns.nav_hunk("next")
-				end
+				gitsigns.nav_hunk("next")
 			end, { desc = "Next Hunk" })
-
 			map("n", "<leader>hp", function()
-				if vim.wo.diff then
-					vim.cmd.normal({ "[c", bang = true })
-				else
-					gitsigns.nav_hunk("prev")
-				end
+				gitsigns.nav_hunk("prev")
 			end, { desc = "Previous Hunk" })
 
 			-- Actions
@@ -42,7 +33,7 @@ return {
 
 			map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage Buffer" })
 			map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset Buffer" })
-			map("n", "<leader>hv", gitsigns.preview_hunk, { desc = "Preview Hunk" })
+			map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview Hunk" })
 			map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview Hunk Inline" })
 
 			map("n", "<leader>hb", function()

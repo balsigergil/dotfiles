@@ -15,6 +15,7 @@ return { -- Useful plugin to show you pending keybinds.
 		spec = {
 			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>c", group = "[C]ode" },
+			{ "<leader>r", group = "[R]ename" },
 			{ "<leader>t", group = "[T]oggle" },
 			{ "<leader>b", group = "[B]uffers" },
 			{ "<leader>h", group = "Git [H]unks" },
